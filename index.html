@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex·Witch — 2026 Fire Horse · Master Archive</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* -------------------- DARK THEME (DEFAULT) - PURE BLACK BACKGROUND -------------------- */
+        :root {
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --text: #ffffff;
+            --accent: #cf7a5c;
+            --accent-soft: #2a1e1b;
+            --dark: #cf7a5c;
+            --gold: #e6d5b6;
+            --danger: #ff8a8a;
+            --warning: #e6b89c;
+            --border-light: #2a2a2a;
+            --card-bg: #0f0f0f;
+            --shadow: rgba(207, 122, 92, 0.15);
+            --tab-inactive: #b8a99a;
+            --grid-bg: #151515;
+            --toggle-bg: rgba(207, 122, 92, 0.2);
+            --toggle-hover: rgba(207, 122, 92, 0.3);
+            --toggle-color: #cf7a5c;
+            --hero-bg: #0a0a0a;
+            --hero-text: #ffffff;
+            --hero-sub: #e6d5b6;
+        }
+
+        /* -------------------- LIGHT THEME - PURE WHITE HEADER (RED HORSE POPS) -------------------- */
+        body.light {
+            --bg: #ffffff;
+            --surface: #ffffff;
+            --text: #1a1614;
+            --accent: #aa4e3a;
+            --accent-soft: #fbf1ed;
+            --dark: #aa4e3a;
+            --gold: #b7a082;
+            --danger: #c53030;
+            --warning: #c07c4a;
+            --border-light: #e8e0d8;
+            --card-bg: #ffffff;
+            --shadow: rgba(170, 78, 58, 0.08);
+            --tab-inactive: #6b5b53;
+            --grid-bg: #f9f5f2;
+            --toggle-bg: rgba(170, 78, 58, 0.1);
+            --toggle-hover: rgba(170, 78, 58, 0.2);
+            --toggle-color: #aa4e3a;
+            --hero-bg: #ffffff;
+            /* PURE WHITE - red fire horse POPS */
+            --hero-text: #1a1614;
+            /* Dark text for contrast */
+            --hero-sub: #aa4e3a;
+            /* Red subtitle */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background 0.3s, border-color 0.2s, color 0.2s;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* ------ TOGGLE BUTTONS - FIXED TO BODY ------ */
+        .toggle-corner {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            display: flex;
+            gap: 12px;
+            z-index: 10000;
+        }
+
+        .toggle-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--toggle-bg);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(207, 122, 92, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--toggle-color);
+            font-size: 1.3rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .toggle-icon:hover {
+            background: var(--toggle-hover);
+            transform: scale(1.15);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .master-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 40px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 40px 80px var(--shadow);
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        /* ------ HEADER - EXTREME OVERFLOW - MASSIVE 350px IMAGES ------ */
+        .hero {
+            background: var(--hero-bg);
+            color: var(--hero-text);
+            padding: 1rem 2rem;
+            border-bottom: 8px solid var(--accent);
+            border-radius: 40px 40px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            min-height: 180px;
+            overflow: visible;
+            z-index: 10;
+        }
+
+        .hero-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 20;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            letter-spacing: -2px;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1.1;
+            color: var(--hero-text);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: var(--hero-sub);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* ------ IMAGE SLOTS - NO BORDERS, PURE IMAGES ------ */
+        .hero-image-slot {
+            width: 180px;
+            height: 180px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 30;
+            overflow: visible;
+        }
+
+        .hero-image-slot img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5));
+            z-index: 40;
+            /* NO BORDERS - intentionally empty */
+        }
+
+        /* Left image specific */
+        .hero-image-slot.left img {
+            left: 35%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Right image specific */
+        .hero-image-slot.right img {
+            left: 65%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* ------ TAB NAVIGATION ------ */
+        .tab-nav {
+            display: flex;
+            background: var(--grid-bg);
+            padding: 0.5rem;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .tab-btn {
+            flex: 1 1 auto;
+            padding: 1.2rem 0.5rem;
+            border: none;
+            background: none;
+            font-weight: 800;
+            color: var(--tab-inactive);
+            cursor: pointer;
+            border-radius: 15px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn i {
+            margin-right: 6px;
+        }
+
+        .tab-btn.active {
+            background: var(--surface);
+            color: var(--accent);
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2.5rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ------ FLYING STARS ------ */
+        .engine-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 2.5rem;
+        }
+
+        .lo-shu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background: var(--grid-bg);
+            padding: 20px;
+            border-radius: 30px;
+        }
+
+        .sector {
+            aspect-ratio: 1;
+            background: var(--card-bg);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 2px solid var(--border-light);
+            color: var(--text);
+        }
+
+        .sector:hover {
+            border-color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .sector.danger {
+            border: 3px solid var(--danger);
+        }
+
+        .sector.selected {
+            border: 4px solid var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .sector .num {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .sector .dir {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .cure-card-active {
+            background: var(--grid-bg);
+            padding: 2rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-light);
+        }
+
+        .recipe-block {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 20px;
+            border-left: 8px solid var(--accent);
+        }
+
+        .image-slot {
+            width: 100%;
+            min-height: 120px;
+            background: var(--surface);
+            border-radius: 24px;
+            border: 2px dashed var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.9rem;
+            gap: 10px;
+            margin: 1.2rem 0 0.5rem;
+            padding: 1rem;
+        }
+
+        /* ------ AFFLICTIONS ------ */
+        .aff-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .aff-item {
+            padding: 2rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-light);
+            background: var(--card-bg);
+        }
+
+        .aff-item.danger {
+            border-top: 10px solid var(--danger);
+        }
+
+        .aff-item.warning {
+            border-top: 10px solid var(--warning);
+        }
+
+        /* ------ ZODIAC - AVATAR RIGHT OF TITLE, CURE BOTTOM ------ */
+        .zodiac-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .zodiac-calc {
+            background: var(--grid-bg);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .zodiac-calc input {
+            padding: 0.7rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-light);
+            background: var(--surface);
+            color: var(--text);
+            font-weight: 600;
+            width: 120px;
+        }
+
+        .zodiac-calc button {
+            padding: 0.7rem 1.2rem;
+            border-radius: 30px;
+            border: none;
+            background: var(--accent);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .z-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 30px;
+            padding: 1.8rem;
+            border-top: 10px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .z-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 0.8rem;
+        }
+
+        .z-card-header h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        .zodiac-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: var(--grid-bg);
+            border: 2px dashed var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+
+        .z-row {
+            margin-bottom: 1rem;
+        }
+
+        .z-row strong {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            margin-bottom: 4px;
+        }
+
+        /* ------ RESONANCE - FULLY CENTERED, ICON ONLY ON RESULT ------ */
+        .res-box {
+            background: var(--hero-bg);
+            color: var(--hero-text);
+            padding: 3rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .res-box h2,
+        .res-box p {
+            text-align: center;
+            color: var(--hero-text);
+        }
+
+        .res-box p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--hero-sub);
+        }
+
+        .res-input-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        input[type="date"] {
+            padding: 1.2rem;
+            border-radius: 15px;
+            border: none;
+            width: 320px;
+            max-width: 90%;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            background: white;
+            color: black;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calc-btn {
+            background: var(--accent);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 800;
+            cursor: pointer;
+            display: block;
+            margin: 0.5rem auto 1.5rem;
+            font-size: 1rem;
+        }
+
+        .result-element-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            margin: 1.5rem auto 0.5rem;
+        }
+
+        .annotation {
+            font-size: 0.75rem;
+            color: var(--gold);
+            margin-left: 6px;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        /* ------ FOOTER ------ */
+        .footer {
+            background: var(--hero-bg);
+            color: var(--hero-text);
+            padding: 1.8rem 2.5rem;
+            border-radius: 0 0 40px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--accent);
+            margin-top: 1rem;
+        }
+
+        /* ------ MOBILE RESPONSIVE ------ */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding: 1rem;
+            }
+
+            .engine-layout,
+            .aff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                flex-wrap: wrap;
+                padding-top: 20px;
+                min-height: auto;
+            }
+
+            .z-card-header {
+                flex-wrap: wrap;
+            }
+
+            .hero-image-slot {
+                width: 120px;
+                height: 120px;
+            }
+
+            .hero-image-slot img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .toggle-corner {
+                top: 15px;
+                right: 15px;
+            }
+
+            .toggle-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-sub {
+                letter-spacing: 4px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                flex-direction: column;
+                gap: 1rem;
+                padding-top: 2rem;
+            }
+
+            .hero-image-slot {
+                width: 100px;
+                height: 100px;
+            }
+
+            .hero-image-slot img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ------ FIX OVERFLOW BLOCKING - RAISE CLICKABLE ELEMENTS ABOVE IMAGES ------ */
+
+        /* Raise entire tab navigation above header images */
+        .tab-nav {
+            position: relative;
+            z-index: 100 !important;
+            /* Higher than hero images (40) */
+        }
+
+        /* Raise all tab buttons */
+        .tab-btn {
+            position: relative;
+            z-index: 101 !important;
+        }
+
+        /* Raise all clickable sector grids */
+        .lo-shu-grid {
+            position: relative;
+            z-index: 100 !important;
+        }
+
+        .sector {
+            position: relative;
+            z-index: 102 !important;
+            cursor: pointer;
+        }
+
+        /* Raise all buttons everywhere */
+        button,
+        .calc-btn,
+        .zodiac-calc button,
+        .toggle-icon {
+            position: relative;
+            z-index: 200 !important;
+            /* Even higher for buttons */
+        }
+
+        /* Raise all form inputs */
+        input,
+        select,
+        .zodiac-calc input {
+            position: relative;
+            z-index: 150 !important;
+        }
+
+        /* Raise all tab content areas */
+        .tab-content {
+            position: relative;
+            z-index: 90 !important;
+        }
+
+        /* Specifically raise Day Master calculator */
+        .res-input-container {
+            position: relative;
+            z-index: 110 !important;
+        }
+
+        .res-box {
+            position: relative;
+            z-index: 95 !important;
+        }
+
+        /* Ensure footer is below images (doesn't need clicking) */
+        .footer {
+            position: relative;
+            z-index: 10 !important;
+        }
+    </style>
+
+</head>
+
+<body class="dark"> <!-- DARK MODE IS DEFAULT -->
+
+    <!-- ========== PROFESSIONAL TOGGLE BUTTONS - FIXED TO BODY, NEVER OVERLAP ========= -->
+    <div class="toggle-corner">
+        <button id="themeToggle" class="toggle-icon" title="Light mode">
+            <i class="fas fa-sun"></i> <!-- Starts with sun since dark is default -->
+        </button>
+        <button id="musicToggle" class="toggle-icon" title="Ambient sound">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <div class="master-container">
+
+        <!-- ========== HEADER - EXTREME OVERFLOW - MASSIVE 350px IMAGES ========= -->
+        <header class="hero">
+            <div class="hero-image-slot left">
+                <img src="left.png" alt="Left Brand">
+            </div>
+            <div class="hero-brand">
+                <h1>2026 FIRE HORSE CODEX</h1>
+                <div class="hero-sub">Bing Wu · 丙午 · Year of the Fire Horse</div>
+            </div>
+            <div class="hero-image-slot right">
+                <img src="right.PNG" alt="Right Brand">
+            </div>
+        </header>
+
+        <!-- ========== TAB NAVIGATION ========= -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'stars')"><i class="fas fa-star"></i> Flying Stars ·
+                玄空飞星</button>
+            <button class="tab-btn" onclick="openTab(event, 'afflictions')"><i class="fas fa-exclamation-triangle"></i>
+                Annual Afflictions · 煞</button>
+            <button class="tab-btn" onclick="openTab(event, 'zodiac')"><i class="fas fa-dog"></i> 12 Zodiacs ·
+                生肖</button>
+            <button class="tab-btn" onclick="openTab(event, 'resonance')"><i class="fas fa-waveform"></i> Day Master
+                Resonance · 日主</button>
+        </nav>
+
+        <!-- ********** TAB 1: FLYING STARS ********** -->
+        <div id="stars" class="tab-content active">
+            <div class="engine-layout">
+                <div>
+                    <h2 style="margin-bottom:0.5rem;">Flying Stars · 玄空飞星 2026</h2>
+                    <p style="margin-bottom:1.2rem;">Click any sector for traditional cures and placement guidance.</p>
+                    <div class="lo-shu-grid" id="loShuGrid">
+                        <div class="sector" data-sector="se"><span class="dir">SE</span><span class="num">9</span></div>
+                        <div class="sector danger" data-sector="s"><span class="dir">S</span><span class="num">5</span>
+                        </div>
+                        <div class="sector" data-sector="sw"><span class="dir">SW</span><span class="num">7</span></div>
+                        <div class="sector" data-sector="e"><span class="dir">E</span><span class="num">8</span></div>
+                        <div class="sector" data-sector="mid"><span class="dir">MID</span><span class="num">1</span>
+                        </div>
+                        <div class="sector" data-sector="w"><span class="dir">W</span><span class="num">3</span></div>
+                        <div class="sector" data-sector="ne"><span class="dir">NE</span><span class="num">4</span></div>
+                        <div class="sector" data-sector="n"><span class="dir">N</span><span class="num">6</span></div>
+                        <div class="sector" data-sector="nw"><span class="dir">NW</span><span class="num">2</span></div>
+                    </div>
+                    <div class="image-slot"><i class="fas fa-image"></i> Flying Star talisman · 飞星符</div>
+                </div>
+                <div class="cure-card-active" id="cure-output">
+                    <h3>Sector Guidance <span class="annotation">方位化解</span></h3>
+                    <p>⟡ Select a sector to view the 2026 star influence and remedies.</p>
+                    <div class="image-slot" style="min-height: 100px;"><i class="fas fa-image"></i> cure object image ·
+                        化煞物品</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ********** TAB 2: AFFLICTIONS ********** -->
+        <div id="afflictions" class="tab-content">
+            <div class="aff-grid">
+                <div class="aff-item danger">
+                    <h2>Tai Sui · 5 Yellow <span class="annotation">太岁 · 五黄</span></h2>
+                    <p><strong>Location:</strong> South (157.5° – 202.5°)</p>
+                    <p style="margin-top:1rem;"><strong>Understanding this energy:</strong> In 2026, the Grand Duke
+                        resides in the South, accompanied by the 5 Yellow star of calamity. This does not mean "do not
+                        enter" — rather, avoid heavy construction, drilling, or sitting with back to South. The energy
+                        is dormant but intense; stillness is protective. Salt water absorbs earth toxicity. Replace
+                        every lunar month.</p>
+                    <div class="recipe-block">
+                        <strong>Traditional Remedy:</strong> White ceramic jar filled with 1kg sea salt, 6 old coins,
+                        topped with water. Do not cover. Let salt crystallize naturally. Place Pi Xiu facing outward for
+                        wealth protection.
+                    </div>
+                    <div class="image-slot"><i class="fas fa-image"></i> 五黄盐瓮 · Salt Jar Cure</div>
+                </div>
+                <div class="aff-item warning">
+                    <h2>Three Killings <span class="annotation">三杀</span></h2>
+                    <p><strong>Location:</strong> North (322.5° – 37.5°)</p>
+                    <p><strong>Understanding this energy:</strong> Three Killings arise from the annual triad. In 2026,
+                        North carries risk of loss — wealth, health, relationships. This is not fatalistic; it calls for
+                        awareness. Avoid sitting with back to North. The remedy is not a "weapon" but a gesture of
+                        respect: celestial guardians placed with intention.</p>
+                    <div class="recipe-block">
+                        <strong>Traditional Remedy:</strong> Place Chi Lin, Fu Dog, and Pi Yao in the North sector,
+                        facing the main door. Clean water and incense on 1st and 15th lunar days. Do not place in
+                        bedroom.
+                    </div>
+                    <div class="image-slot"><i class="fas fa-image"></i> 三煞瑞兽 · Guardian Figures</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ********** TAB 3: ZODIAC - AVATAR RIGHT, CURE BOTTOM, YEAR INPUT 1900-2031 ********** -->
+        <div id="zodiac" class="tab-content">
+            <div class="zodiac-header">
+                <h2>12 Zodiacs · 2026 Fire Horse <span class="annotation">生肖年运</span></h2>
+                <div class="zodiac-calc">
+                    <label>Birth year:</label>
+                    <input type="number" id="yearInput" min="1900" max="2031" value="1986" placeholder="eg. 1986">
+                    <button onclick="showZodiacFromYear()">Find sign</button>
+                    <span id="zodiacResult" style="font-weight:700;">—</span>
+                </div>
+            </div>
+            <div class="zodiac-grid" id="z-grid"></div>
+        </div>
+
+        <!-- ********** TAB 4: RESONANCE - FULLY CENTERED, ICON ONLY ON RESULT ********** -->
+        <div id="resonance" class="tab-content">
+            <div class="res-box">
+                <h2>Day Master Resonance · 日主</h2>
+                <p style="margin:1rem auto 2rem; font-size:1.1rem;">
+                    Your Day Master is the heavenly stem of your birth day — the ruler of your Bazi chart. Enter your
+                    date below for accurate 60-cycle calculation.
+                </p>
+
+                <div class="res-input-container">
+                    <input type="date" id="birthDate" placeholder="Your birth date">
+                    <button class="calc-btn" onclick="calcRes()">🔮 Calculate Day Master</button>
+                </div>
+
+                <div id="res-result" style="margin-top:1.5rem; font-size:1.8rem; font-weight:600;"></div>
+                <div id="resStemBranch" style="margin-top:0.5rem; font-size:1.2rem; color:var(--hero-sub);"></div>
+                <div id="resElaborate"
+                    style="margin-top:1.5rem; font-size:1.1rem; max-width:700px; margin-left:auto; margin-right:auto; color:var(--hero-sub);">
+                </div>
+
+                <!-- Element icon appears ONLY after calculation -->
+                <div id="resElementIconContainer" style="display: none;" class="result-element-icon">
+                    <i id="resElementIcon" class="fas fa-leaf"></i>
+                    <span id="resElementName"></span>
+                </div>
+
+                <div class="image-slot"
+                    style="margin-top:2rem; background: rgba(255,255,255,0.05); border-color: var(--hero-sub); color: var(--hero-sub);">
+                    <i class="fas fa-image"></i> element spirit imagery · 五行守护
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== FOOTER ========= -->
+        <footer class="footer">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-scroll" style="font-size: 1.8rem;"></i>
+                <span style="font-weight: 700;">Codex·Witch</span>
+            </div>
+            <div style="display: flex; gap: 2rem;">
+                <span>© 2026 Bing Wu</span>
+                <span><i class="fas fa-seal"></i> Master Archive</span>
+                <span>witch.codex</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // ---------- COMPLETE 60 JIA ZI DAY MASTER TABLE ----------
+        const JA_ZI_TABLE = [
+            "Jia Zi", "Yi Chou", "Bing Yin", "Ding Mao", "Wu Chen", "Ji Si", "Geng Wu", "Xin Wei", "Ren Shen", "Gui You",
+            "Jia Xu", "Yi Hai", "Bing Zi", "Ding Chou", "Wu Yin", "Ji Mao", "Geng Chen", "Xin Si", "Ren Wu", "Gui Wei",
+            "Jia Shen", "Yi You", "Bing Xu", "Ding Hai", "Wu Zi", "Ji Chou", "Geng Yin", "Xin Mao", "Ren Chen", "Gui Si",
+            "Jia Wu", "Yi Wei", "Bing Shen", "Ding You", "Wu Xu", "Ji Hai", "Geng Zi", "Xin Chou", "Ren Yin", "Gui Mao",
+            "Jia Chen", "Yi Si", "Bing Wu", "Ding Wei", "Wu Shen", "Ji You", "Geng Xu", "Xin Hai", "Ren Zi", "Gui Chou",
+            "Jia Yin", "Yi Mao", "Bing Chen", "Ding Si", "Wu Wu", "Ji Wei", "Geng Shen", "Xin You", "Ren Xu", "Gui Hai"
+        ];
+
+        function getElementFromStem(stem) {
+            const stemMap = {
+                'Jia': 'Wood', 'Yi': 'Wood',
+                'Bing': 'Fire', 'Ding': 'Fire',
+                'Wu': 'Earth', 'Ji': 'Earth',
+                'Geng': 'Metal', 'Xin': 'Metal',
+                'Ren': 'Water', 'Gui': 'Water'
+            };
+            return stemMap[stem] || 'Earth';
+        }
+
+        function getElementIcon(element) {
+            const icons = {
+                'Wood': 'fa-leaf',
+                'Fire': 'fa-fire',
+                'Earth': 'fa-mountain',
+                'Metal': 'fa-coins',
+                'Water': 'fa-water'
+            };
+            return icons[element] || 'fa-leaf';
+        }
+
+        // ---------- SECTOR DATA (ALL 9) ----------
+        const sectorData = {
+            's': { n: "South · 5 Yellow", c: "Salt Water Cure", a: "Avoid red, drilling, noise", r: "White ceramic jar, 1kg sea salt, 6 old coins, topped with water. Let salt crystallize over months. Replace before Lunar New Year. No lid. Place in South but not directly behind door." },
+            'nw': { n: "Northwest · 2 Black", c: "Metal Wu Lou (Gourd)", a: "Avoid candles, fire, renovation", r: "Hollow brass gourd, open mouth. Place in NW corner of bedroom or living room. Drains illness energy. Burn sandalwood weekly." },
+            'se': { n: "Southeast · 9 Purple", c: "9-stalk Bamboo / Purple Light", a: "Avoid clutter, stagnant qi", r: "Activate future prosperity: 9 stalks of lucky bamboo in blue vase. Or small purple LED lamp. Fire of Period 9 brings joyful events." },
+            'n': { n: "North · 6 White", c: "Three Guardians", a: "Avoid back-to-north seating", r: "Place Pi Xiu, Fu Dog, Chi Lin facing main door. Transforms Three Killings into protection. Light incense each Tuesday." },
+            'sw': { n: "Southwest · 7 Red", c: "Water feature + silence", a: "Avoid sharp objects, loud noise", r: "Small water fountain or black tourmaline. 7 Red causes arguments; water drains metal energy. Keep colors muted." },
+            'e': { n: "East · 8 White", c: "8 crystals / wealth bowl", a: "Do not place toilet here", r: "8 white crystals or a wealth bowl with 8 coins. This is the #1 wealth star in Period 9. Activate with moving air (small fan)." },
+            'w': { n: "West · 3 Jade", c: "Red carpet / 9 red envelopes", a: "Avoid blue/black", r: "3 Jade brings disputes. Place red items to reduce wood energy. Or hang windchime with yang lines." },
+            'ne': { n: "Northeast · 4 Green", c: "4 brushes / Wen Chang pagoda", a: "Avoid metal bins", r: "For academic success: 4 bamboo brushes in pot, or small wooden pagoda. Excellent for students." },
+            'mid': { n: "Center · 1 White", c: "Glass of fresh water", a: "Avoid earth pottery", r: "Star of romance and communication. Keep a glass of clean water, change every 2 days. Add white pebbles." }
+        };
+
+        // ---------- ZODIAC DATA (elaborate, advisory) ----------
+        const zodiacs = [
+            { n: "Rat", c: "Career: Direct clash with Tai Sui. This is a year to consolidate, not advance. Reflect on achievements, avoid power struggles.", w: "Wealth: Protect liquid assets. Think of capital as hibernating — no lending.", h: "Health: Vulnerable immunity. Prioritize rest and adaptogenic herbs.", l: "Love: Misunderstandings may arise. Extra gentleness is needed." },
+            { n: "Ox", c: "Career: Steady recognition. Your reliability builds unseen foundations.", w: "Wealth: Property and slow accumulation favored. Avoid get-rich schemes.", h: "Health: Spleen and digestion — eat warm, cooked foods.", l: "Love: Supportive and calm. Long-term bonds deepen." },
+            { n: "Tiger", c: "Career: Strategize quietly. Not yet time to leap; research and plan.", w: "Wealth: Conserve. Fire year drains wood. No risky expansion.", h: "Health: Liver chi stagnation. Stretch, limit alcohol.", l: "Love: Space needed. Introspection benefits partnership." },
+            { n: "Rabbit", c: "Career: Collaboration blooms. Network, merge skills with others.", w: "Wealth: Gains through partnerships, commissions.", h: "Health: Anxiety may surface. Breathwork helps.", l: "Love: High romantic potential. Open conversations." },
+            { n: "Dragon", c: "Career: Ambition high, but timing not ripe. Wait for autumn.", w: "Wealth: Steady savings, no luxury expenditure.", h: "Health: Heat-related skin issues. Hydrate.", l: "Love: Family harmony is priority. Nurture elders." },
+            { n: "Snake", c: "Career: Reinvention. You're shedding old skin — embrace new training.", w: "Wealth: Invest in high-level skills, not stocks.", h: "Health: Mental fatigue; meditate.", l: "Love: Mysterious attraction. Go slow." },
+            { n: "Horse", c: "Career: Your year — but power requires diplomacy. Lead with inclusion, not authority.", w: "Wealth: Earned income favored. Speculation is unwise now.", h: "Health: Heart, blood pressure. Avoid overstimulation.", l: "Love: Volatile; set ego aside." },
+            { n: "Goat", c: "Career: Rebuilding slowly. Friends become allies.", w: "Wealth: Debts gradually clear. Persistence pays.", h: "Health: Prone to burnout. Pace yourself.", l: "Love: Healing old wounds. Gentle honesty." },
+            { n: "Monkey", c: "Career: Focus — avoid scattering energy. Depth over breadth.", w: "Wealth: Multiple small streams. Stay liquid.", h: "Health: Respiratory; protect lungs.", l: "Love: Active social year, but quality > quantity." },
+            { n: "Rooster", c: "Career: Ten-year foundation. Laying bricks, not chasing promotions.", w: "Wealth: No speculation. Rely on salary.", h: "Health: Dryness; hydration crucial.", l: "Love: Transparency resolves old doubts." },
+            { n: "Dog", c: "Career: Heavy responsibility. You're the pillar. Delegate if possible.", w: "Wealth: Stable, avoid high-risk tools.", h: "Health: Joints & fatigue. Magnesium helps.", l: "Love: Set boundaries with grace." },
+            { n: "Pig", c: "Career: Reflective, not stagnant. Learning year.", w: "Wealth: Moderation. No lavish purchases.", h: "Health: Kidney energy; rest and warmth.", l: "Love: Quiet domestic joy." }
+        ];
+
+        // ---------- TAB FUNCTION ----------
+        function openTab(evt, tabName) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // ---------- SECTOR SELECTION WITH CUSTOM IMAGES ----------
+        function setSector(id) {
+            document.querySelectorAll('.sector').forEach(el => el.classList.remove('selected'));
+            const activeSector = document.querySelector(`.sector[data-sector="${id}"]`);
+            if (activeSector) activeSector.classList.add('selected');
+
+            const d = sectorData[id] || { n: "Sector", c: "Keep clean", a: "Noise", r: "Maintain general cleanliness." };
+
+            // Map sector IDs to specific cure images
+            const cureImages = {
+                'se': 'se.jpg',  // Southeast - 9 Purple
+                's': 'images/salt-water-jar.jpg',       // South - 5 Yellow
+                'sw': 'images/water-feature.jpg',       // Southwest - 7 Red
+                'e': 'images/wealth-bowl.jpg',          // East - 8 White
+                'w': 'images/red-envelopes.jpg',        // West - 3 Jade
+                'ne': 'images/wen-chang-pagoda.jpg',    // Northeast - 4 Green
+                'n': 'images/three-guardians.jpg',      // North - 6 White
+                'nw': 'images/wu-lou-gourd.jpg',        // Northwest - 2 Black
+                'mid': 'images/glass-water.jpg'         // Center - 1 White
+            };
+
+            const imagePath = cureImages[id] || 'images/default-cure.jpg';
+
+            document.getElementById('cure-output').innerHTML = `
+        <h3>${d.n} <span class="annotation">方位化解</span></h3>
+        <p><strong>⟡ Primary cure:</strong> ${d.c}</p>
+        <p><strong>⟡ Avoid:</strong> ${d.a}</p>
+        <div class="recipe-block">
+            <strong>📜 Placement guidance:</strong><br>${d.r}
+        </div>
+        <div class="image-slot" style="margin-top:1.2rem; display: flex; flex-direction: column; gap: 10px;">
+            <img src="${imagePath}" alt="${d.n} cure" style="width: 100%; max-height: 180px; object-fit: contain; border-radius: 16px;">
+            <span style="font-size: 0.8rem; color: var(--gold);"><i class="fas fa-image"></i> ${d.n} cure · 化煞物品</span>
+        </div>
+    `;
+        }
+
+        // ---------- ZODIAC INIT - AVATAR RIGHT OF TITLE ----------
+        function initZodiac() {
+            const container = document.getElementById('z-grid');
+            container.innerHTML = zodiacs.map(z => `
+                <div class="z-card">
+                    <div class="z-card-header">
+                        <h3>${z.n} <span class="annotation">生肖</span></h3>
+                        <div class="zodiac-avatar">
+                            <i class="fas fa-image"></i> avatar
+                        </div>
+                    </div>
+                    <div class="z-row"><strong>✨ Career</strong>${z.c}</div>
+                    <div class="z-row"><strong>💰 Wealth</strong>${z.w}</div>
+                    <div class="z-row"><strong>🌿 Health</strong>${z.h}</div>
+                    <div class="z-row"><strong>❤️ Love</strong>${z.l}</div>
+                    <div class="image-slot" style="min-height:90px; margin-top:0.8rem;"><i class="fas fa-image"></i> zodiac talisman · 生肖守护</div>
+                </div>
+            `).join('');
+        }
+
+        // ---------- ZODIAC CALCULATOR - 1900-2031, NO DEPENDENCY ----------
+        function showZodiacFromYear() {
+            const year = parseInt(document.getElementById('yearInput').value);
+            if (isNaN(year) || year < 1900 || year > 2031) {
+                document.getElementById('zodiacResult').innerText = '❌ Enter 1900-2031';
+                return;
+            }
+            const animals = ["Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat"];
+            const idx = year % 12;
+            document.getElementById('zodiacResult').innerText = `${year} → ${animals[idx]}`;
+        }
+
+        // ---------- REAL 60-CYCLE DAY MASTER ----------
+        function getDayMasterFromDate(date) {
+            const baseDate = new Date(1924, 1, 5);
+            const targetDate = new Date(date);
+            baseDate.setHours(0, 0, 0, 0);
+            targetDate.setHours(0, 0, 0, 0);
+            const diffTime = targetDate - baseDate;
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const index = ((diffDays % 60) + 60) % 60;
+            return JA_ZI_TABLE[index];
+        }
+
+        // ---------- RESONANCE CALCULATION - CENTERED, ICON ONLY ON RESULT ----------
+        function calcRes() {
+            const dateStr = document.getElementById('birthDate').value;
+            if (!dateStr) {
+                document.getElementById('res-result').innerHTML = '🕯️ Please select a birth date';
+                document.getElementById('resElaborate').innerHTML = '';
+                document.getElementById('resStemBranch').innerHTML = '';
+                document.getElementById('resElementIconContainer').style.display = 'none';
+                return;
+            }
+
+            const birthDate = new Date(dateStr);
+            if (!birthDate.getTime()) return;
+
+            const dayPillar = getDayMasterFromDate(birthDate);
+            const stem = dayPillar.split(' ')[0];
+            const element = getElementFromStem(stem);
+
+            const advice = {
+                "Wood": "Wood produces Fire — your creativity fuels 2026, yet you may feel drained by year's intensity. Like a tree giving shade, remember to root. Nourish kidneys, rest eyes, and collaborate. Burnout is a risk; set gentle boundaries. Your growth is steady, not explosive.",
+                "Fire": "Two fires intensify ambition. You're competitive, but avoid scorching allies. 2026 asks for disciplined passion—cool down with moonlight, swim, or white clothing. Your leadership inspires, but share credit. Channel fire into creation, not domination.",
+                "Earth": "Earth is supported by Fire. 2026 feels productive; learning is easy. Yet fire can dry earth—stay hydrated, both body and emotions. Mentor others; your stability anchors the year. This is a harvest season for patience.",
+                "Metal": "Fire melts Metal. You may feel under pressure, but pressure creates diamonds. Refine skills, speak less, listen more. Avoid forced confrontations; this is a year of inner alchemy. What doesn't break you becomes your edge.",
+                "Water": "Water controls Fire, but in a Fire year you are tested. Wealth opportunities appear, but must be caught with precision. You are the strategist. Guard against arrogance—diplomacy wins. Your adaptability is your superpower."
+            };
+
+            document.getElementById('res-result').innerHTML = `☯ Your Day Master: ${stem} · ${element}`;
+            document.getElementById('resStemBranch').innerHTML = `60-cycle pillar: ${dayPillar}`;
+            document.getElementById('resElaborate').innerHTML = `<span style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 24px; display:block;">🧘 ${advice[element]}</span>`;
+
+            // Show element icon ONLY after calculation
+            const iconContainer = document.getElementById('resElementIconContainer');
+            const iconElement = document.getElementById('resElementIcon');
+            const iconName = document.getElementById('resElementName');
+
+            iconElement.className = `fas ${getElementIcon(element)}`;
+            iconName.innerText = element;
+            iconContainer.style.display = 'flex';
+        }
+
+        // ---------- THEME TOGGLE - DARK (DEFAULT) / LIGHT ----------
+        function initThemeToggle() {
+            const btn = document.getElementById('themeToggle');
+            const icon = btn.querySelector('i');
+            btn.addEventListener('click', () => {
+                // Remove dark class, toggle light class
+                document.body.classList.toggle('dark');
+                document.body.classList.toggle('light');
+
+                if (document.body.classList.contains('dark')) {
+                    icon.className = 'fas fa-sun';
+                    btn.title = 'Light mode';
+                } else {
+                    icon.className = 'fas fa-moon';
+                    btn.title = 'Dark mode';
+                }
+            });
+        }
+
+        // ---------- MUSIC TOGGLE ----------
+        function initMusicToggle() {
+            const btn = document.getElementById('musicToggle');
+            const icon = btn.querySelector('i');
+            let musicOn = false;
+            btn.addEventListener('click', () => {
+                musicOn = !musicOn;
+                if (musicOn) {
+                    icon.className = 'fas fa-volume-up';
+                    btn.title = 'Stop ambient sound';
+                } else {
+                    icon.className = 'fas fa-music';
+                    btn.title = 'Play ambient sound';
+                }
+            });
+        }
+
+        // ---------- SECTOR LISTENERS ----------
+        function initSectorListeners() {
+            document.querySelectorAll('.sector').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    setSector(el.dataset.sector);
+                });
+            });
+        }
+
+        // ---------- ON LOAD ----------
+        window.onload = function () {
+            // Set dark mode as default
+            document.body.classList.add('dark');
+
+            initZodiac();
+            initSectorListeners();
+            initThemeToggle();
+            initMusicToggle();
+            setSector('s');
+            document.getElementById('yearInput').value = '1986';
+        };
+    </script>
+</body>
+
+</html>
