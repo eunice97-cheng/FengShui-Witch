@@ -3,127 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codex·Witch — 2026 Fire Horse · Master Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="A mystical digital archive for the 2026 Fire Horse year: flying stars, afflictions, zodiac guidance, and day master resonance.">
+    <meta id="themeColorMeta" name="theme-color" content="#0b0d10">
+    <title>Codex&middot;Witch - 2026 Fire Horse Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function(c, l, a, r, i, t, y) {
+            c[a] = c[a] || function() {
+                (c[a].q = c[a].q || []).push(arguments);
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "vt02r5snnu");
     </script>
 </head>
-<body class="dark">
-    <div class="toggle-corner">
-        <button id="themeToggle" class="toggle-icon" title="Light mode"><i class="fas fa-sun"></i></button>
-        <button id="musicToggle" class="toggle-icon" title="Ambient sound"><i class="fas fa-music"></i></button>
+<body class="theme-night">
+    <div class="page-noise" aria-hidden="true"></div>
+
+    <div class="utility-dock" aria-label="Site controls">
+        <button id="themeToggle" class="utility-btn utility-btn--theme" type="button" aria-label="Toggle theme" aria-pressed="false">
+            <span class="dock-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                    <circle cx="12" cy="12" r="4.2"></circle>
+                    <path d="M12 2.5v2.3"></path>
+                    <path d="M12 19.2v2.3"></path>
+                    <path d="M4.9 4.9l1.6 1.6"></path>
+                    <path d="M17.5 17.5l1.6 1.6"></path>
+                    <path d="M2.5 12h2.3"></path>
+                    <path d="M19.2 12h2.3"></path>
+                    <path d="M4.9 19.1l1.6-1.6"></path>
+                    <path d="M17.5 6.5l1.6-1.6"></path>
+                </svg>
+            </span>
+            <span class="dock-chip__copy">
+                <span class="utility-btn__label">Theme</span>
+                <span id="themeToggleMeta" class="utility-btn__meta">Night</span>
+            </span>
+        </button>
+        <button id="musicToggle" class="utility-btn utility-btn--audio" type="button" aria-label="Toggle ambient audio" aria-pressed="false">
+            <span class="dock-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                    <path d="M4 14h2"></path>
+                    <path d="M8 11h2"></path>
+                    <path d="M12 8h2"></path>
+                    <path d="M16 11h2"></path>
+                    <path d="M20 14h0"></path>
+                    <path d="M5 16c2.5-5.2 6.5-7.8 12-8"></path>
+                    <path d="M7 19c3-5.5 7.3-8.6 13-9"></path>
+                </svg>
+            </span>
+            <span class="dock-chip__copy">
+                <span class="utility-btn__label">Ambient audio</span>
+                <span id="musicToggleMeta" class="utility-btn__meta">Off</span>
+            </span>
+        </button>
     </div>
 
-    <div class="master-container">
-        <header class="hero">
-            <div class="hero-image-slot left"><img src="left.png" alt="Left Brand"></div>
-            <div class="hero-brand">
-                <h1>2026 FIRE HORSE CODEX</h1>
-                <div class="hero-sub">Bing Wu · 丙午 · Year of the Fire Horse</div>
+    <div class="signal-dock" aria-label="Community links">
+        <a href="https://discord.com/users/909063517280296961" target="_blank" rel="noopener noreferrer" class="signal-btn signal-btn--discord">
+            <span class="dock-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                    <path d="M7 18c-1.8-1.2-3-3.4-3-5.8 0-4 3.6-7.2 8-7.2s8 3.2 8 7.2-3.6 7.2-8 7.2h-1.3L7 21v-3z"></path>
+                    <path d="M9.2 12h.01"></path>
+                    <path d="M14.8 12h.01"></path>
+                </svg>
+            </span>
+            <span class="dock-chip__copy">
+                <span class="signal-btn__label">Discord</span>
+                <span class="signal-btn__meta">Open channel</span>
+            </span>
+        </a>
+        <a href="https://ko-fi.com/eunicecheng" target="_blank" rel="noopener noreferrer" class="signal-btn signal-btn--kofi">
+            <span class="dock-chip__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8">
+                    <path d="M5 8h11a3 3 0 0 1 0 6h-1"></path>
+                    <path d="M5 8v7a3 3 0 0 0 3 3h5a3 3 0 0 0 3-3V8"></path>
+                    <path d="M9 5c0 1 1 1.7 1.8 2.4"></path>
+                    <path d="M13 5c0 1-.9 1.7-1.8 2.4"></path>
+                </svg>
+            </span>
+            <span class="dock-chip__copy">
+                <span class="signal-btn__label">Ko-fi</span>
+                <span class="signal-btn__meta">Support the archive</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="page-shell">
+        <header class="masthead">
+            <div class="masthead__copy">
+                <p class="eyebrow">2026 master archive</p>
+                <h1>Codex of the Fire Horse</h1>
+                <p class="masthead__lede">
+                    Mystical guidance rendered as a living dashboard for the Year of Bing Wu:
+                    flying stars, annual pressure points, zodiac timing, and day-master resonance.
+                </p>
+
+                <div class="masthead__chips" aria-label="Annual identifiers">
+                    <span>Bing Wu / 丙午</span>
+                    <span>Year of the Fire Horse</span>
+                    <span>Period 9 lens</span>
+                </div>
+
+                <div class="hero-metrics">
+                    <article class="metric-card metric-card--warning">
+                        <p class="metric-card__label">Annual pressure</p>
+                        <h2>South</h2>
+                        <p>Tai Sui sits here with the 5 Yellow. Keep it quiet, stable, and respectful.</p>
+                    </article>
+                    <article class="metric-card metric-card--cool">
+                        <p class="metric-card__label">Protective stance</p>
+                        <h2>North</h2>
+                        <p>Three Killings asks for careful posture and guardians placed with intention.</p>
+                    </article>
+                    <article class="metric-card metric-card--bright">
+                        <p class="metric-card__label">Opportunity</p>
+                        <h2>East + Southeast</h2>
+                        <p>Wealth, momentum, and visibility are strongest when these sectors stay active and clean.</p>
+                    </article>
+                </div>
             </div>
-            <div class="hero-image-slot right"><img src="right.PNG" alt="Right Brand"></div>
+
+            <div class="masthead__visual" aria-hidden="true">
+                <div class="visual-card visual-card--left">
+                    <img src="left.png" alt="" decoding="async" fetchpriority="high" width="350" height="350">
+                </div>
+                <div class="visual-core">
+                    <div class="visual-core__ring"></div>
+                    <div class="visual-core__content">
+                        <p class="visual-core__label">Archive pulse</p>
+                        <strong>Stillness is the strongest cure in 2026.</strong>
+                        <p>Activate the bright sectors. Respect the hot ones.</p>
+                    </div>
+                </div>
+                <div class="visual-card visual-card--right">
+                    <img src="right.PNG" alt="" decoding="async" fetchpriority="high" width="350" height="350">
+                </div>
+            </div>
         </header>
 
-        <nav class="tab-nav">
-            <button class="tab-btn active" onclick="openTab(event, 'stars')"><i class="fas fa-star"></i> Flying Stars · 玄空飞星</button>
-            <button class="tab-btn" onclick="openTab(event, 'afflictions')"><i class="fas fa-exclamation-triangle"></i> Annual Afflictions · 煞</button>
-            <button class="tab-btn" onclick="openTab(event, 'zodiac')"><i class="fas fa-dog"></i> 12 Zodiacs · 生肖</button>
-            <button class="tab-btn" onclick="openTab(event, 'resonance')"><i class="fas fa-waveform"></i> Day Master Resonance · 日主</button>
+        <nav class="section-nav" role="tablist" aria-label="Archive sections">
+            <button id="tab-stars" class="section-nav__btn is-active" type="button" role="tab" aria-selected="true" aria-controls="stars" data-tab-target="stars">
+                <span class="section-nav__hint">Grid</span>
+                <span class="section-nav__title">Flying Stars</span>
+            </button>
+            <button id="tab-afflictions" class="section-nav__btn" type="button" role="tab" aria-selected="false" aria-controls="afflictions" data-tab-target="afflictions" tabindex="-1">
+                <span class="section-nav__hint">Pressure</span>
+                <span class="section-nav__title">Afflictions</span>
+            </button>
+            <button id="tab-zodiac" class="section-nav__btn" type="button" role="tab" aria-selected="false" aria-controls="zodiac" data-tab-target="zodiac" tabindex="-1">
+                <span class="section-nav__hint">Cycle</span>
+                <span class="section-nav__title">12 Zodiacs</span>
+            </button>
+            <button id="tab-resonance" class="section-nav__btn" type="button" role="tab" aria-selected="false" aria-controls="resonance" data-tab-target="resonance" tabindex="-1">
+                <span class="section-nav__hint">Element</span>
+                <span class="section-nav__title">Day Master</span>
+            </button>
         </nav>
 
-        <div id="stars" class="tab-content active">
-            <div class="engine-layout">
-                <div>
-                    <h2 style="margin-bottom:0.5rem;">Flying Stars · 玄空飞星 2026</h2>
-                    <p style="margin-bottom:1.2rem;">Click any sector for traditional cures and placement guidance.</p>
-                    <div class="lo-shu-grid" id="loShuGrid">
-                        <div class="sector" data-sector="se"><span class="dir">SE</span><span class="num">9</span></div>
-                        <div class="sector danger" data-sector="s"><span class="dir">S</span><span class="num">5</span></div>
-                        <div class="sector" data-sector="sw"><span class="dir">SW</span><span class="num">7</span></div>
-                        <div class="sector" data-sector="e"><span class="dir">E</span><span class="num">8</span></div>
-                        <div class="sector" data-sector="mid"><span class="dir">MID</span><span class="num">1</span></div>
-                        <div class="sector" data-sector="w"><span class="dir">W</span><span class="num">3</span></div>
-                        <div class="sector" data-sector="ne"><span class="dir">NE</span><span class="num">4</span></div>
-                        <div class="sector" data-sector="n"><span class="dir">N</span><span class="num">6</span></div>
-                        <div class="sector" data-sector="nw"><span class="dir">NW</span><span class="num">2</span></div>
+        <noscript>
+            <div class="noscript-banner">This archive needs JavaScript for sector switching, zodiac lookup, and day-master calculation.</div>
+        </noscript>
+
+        <main class="archive-main">
+            <section id="stars" class="panel is-active" role="tabpanel" aria-labelledby="tab-stars">
+                <div class="panel-head">
+                    <div>
+                        <p class="panel-kicker">Flying Stars</p>
+                        <h2 class="panel-title">Read the year through the Lo Shu grid</h2>
+                        <p class="panel-copy">
+                            Choose a sector to reveal its active star, what it amplifies, what to avoid,
+                            and which traditional cure best matches the palace.
+                        </p>
                     </div>
+                    <aside class="panel-head__callout">
+                        <p class="panel-head__callout-label">Reading note</p>
+                        <p>In a Fire Horse year, force is rarely the answer. Precision, rhythm, and restraint matter more.</p>
+                    </aside>
                 </div>
-                <div class="cure-card-active" id="cure-output">
-                    <h3>Sector Guidance <span class="annotation">方位化解</span></h3>
-                    <p>⟡ Select a sector to view the 2026 star influence and remedies.</p>
-                    <div style="margin-top:1.5rem; width:100%; background:transparent; padding:0;">
-                        <img src="cure-default.png" alt="cure image" onerror="this.onerror=null; this.src='cure-default.jpg'" style="width:100%; height:auto; max-height:400px; object-fit:contain; border:none; border-radius:0; background:transparent; display:block;">
+
+                <div class="stars-layout">
+                    <aside class="stars-sidebar">
+                        <div class="sidebar-card">
+                            <p class="sidebar-card__label">How to read the grid</p>
+                            <ul class="principle-list">
+                                <li>Bright sectors want movement, light, and clean intention.</li>
+                                <li>Heavy sectors want stillness, low noise, and fewer disturbances.</li>
+                                <li>Use cures as calibration tools, not superstition props.</li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-card">
+                            <p class="sidebar-card__label">Fast read</p>
+                            <div class="signal-stack">
+                                <div class="signal-stack__item">
+                                    <span class="signal-stack__name">East</span>
+                                    <span class="signal-stack__value">8 White wealth</span>
+                                </div>
+                                <div class="signal-stack__item">
+                                    <span class="signal-stack__name">Southeast</span>
+                                    <span class="signal-stack__value">9 Purple visibility</span>
+                                </div>
+                                <div class="signal-stack__item">
+                                    <span class="signal-stack__name">South</span>
+                                    <span class="signal-stack__value">5 Yellow caution</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="stars-board">
+                        <div id="loShuGrid" class="lo-shu-grid" aria-label="Lo Shu sector grid"></div>
                     </div>
+
+                    <article id="sectorDetail" class="detail-panel" aria-live="polite">
+                        <p class="detail-panel__label">Selected sector</p>
+                        <h3 id="sectorTitle">South - 5 Yellow</h3>
+                        <p id="sectorSynopsis" class="detail-panel__copy"></p>
+
+                        <div class="detail-grid">
+                            <div class="detail-block">
+                                <p class="detail-label">Influence</p>
+                                <p id="sectorInfluence"></p>
+                            </div>
+                            <div class="detail-block">
+                                <p class="detail-label">Primary cure</p>
+                                <p id="sectorCure"></p>
+                            </div>
+                            <div class="detail-block">
+                                <p class="detail-label">Avoid</p>
+                                <p id="sectorAvoid"></p>
+                            </div>
+                            <div class="detail-block">
+                                <p class="detail-label">Element</p>
+                                <p id="sectorElement"></p>
+                            </div>
+                        </div>
+
+                        <div class="guidance-card">
+                            <p class="guidance-card__label">Placement guidance</p>
+                            <p id="sectorGuidance"></p>
+                        </div>
+
+                        <figure class="detail-figure">
+                            <img id="sectorImage" src="cure-5.jpg" alt="Traditional cure for the South sector" loading="lazy" decoding="async">
+                        </figure>
+                    </article>
+                </div>
+            </section>
+
+            <section id="afflictions" class="panel" role="tabpanel" aria-labelledby="tab-afflictions" hidden>
+                <div class="panel-head">
+                    <div>
+                        <p class="panel-kicker">Annual Afflictions</p>
+                        <h2 class="panel-title">Respect the sectors that carry the most weight</h2>
+                        <p class="panel-copy">
+                            These are not zones to fear. They are zones to handle with better posture,
+                            lower ego, and stronger environmental discipline.
+                        </p>
+                    </div>
+                    <aside class="panel-head__callout">
+                        <p class="panel-head__callout-label">Rule of thumb</p>
+                        <p>When an annual affliction is active, reduce noise before you add cures.</p>
+                    </aside>
+                </div>
+
+                <div id="afflictionGrid" class="affliction-grid"></div>
+            </section>
+
+            <section id="zodiac" class="panel" role="tabpanel" aria-labelledby="tab-zodiac" hidden>
+                <div class="panel-head panel-head--split">
+                    <div>
+                        <p class="panel-kicker">12 Zodiacs</p>
+                        <h2 class="panel-title">Find your sign, then read the year from there</h2>
+                        <p class="panel-copy">
+                            These snapshots are written as strategic moodboards: where to push, where to conserve,
+                            and what kind of personal climate each sign moves through in 2026.
+                        </p>
+                    </div>
+
+                    <form id="zodiacForm" class="year-finder">
+                        <label class="field" for="yearInput">
+                            <span class="field__label">Birth year</span>
+                            <input type="number" id="yearInput" min="1900" max="2031" inputmode="numeric" placeholder="1986">
+                        </label>
+                        <button class="primary-btn" type="submit">Locate sign</button>
+                    </form>
+                </div>
+
+                <p id="zodiacResult" class="result-banner" aria-live="polite">Enter a year to spotlight the matching zodiac card.</p>
+                <div id="zodiacGrid" class="zodiac-grid"></div>
+            </section>
+
+            <section id="resonance" class="panel" role="tabpanel" aria-labelledby="tab-resonance" hidden>
+                <div class="panel-head panel-head--split">
+                    <div>
+                        <p class="panel-kicker">Day Master Resonance</p>
+                        <h2 class="panel-title">Translate your birth day into the language of the year</h2>
+                        <p class="panel-copy">
+                            Your Day Master is the heavenly stem of your birth day. This tool calculates the
+                            day pillar from the 60 Jia Zi cycle and then reads how that element meets 2026 fire.
+                        </p>
+                    </div>
+
+                    <form id="resonanceForm" class="resonance-form">
+                        <label class="field field--wide" for="birthDate">
+                            <span class="field__label">Birth date</span>
+                            <input type="date" id="birthDate">
+                        </label>
+                        <button class="primary-btn" type="submit">Calculate day master</button>
+                    </form>
+                </div>
+
+                <div class="resonance-layout">
+                    <article id="resonanceCard" class="resonance-card" aria-live="polite">
+                        <p class="detail-panel__label">Awaiting input</p>
+                        <h3 id="resResultTitle">Choose a date to reveal the day pillar.</h3>
+                        <p id="resStemBranch" class="resonance-card__pillar">
+                            The result will show your heavenly stem, 60-cycle pillar, and how the element interacts with 2026.
+                        </p>
+
+                        <div id="resElementBadge" class="element-badge element-badge--hidden">
+                            <span id="resElementName">Element</span>
+                        </div>
+
+                        <div class="detail-grid">
+                            <div class="detail-block">
+                                <p class="detail-label">Relationship to 2026</p>
+                                <p id="resRelationship">Waiting for a date.</p>
+                            </div>
+                            <div class="detail-block">
+                                <p class="detail-label">Focus</p>
+                                <p id="resFocus">Use the result to guide pacing, recovery, and timing.</p>
+                            </div>
+                        </div>
+
+                        <p id="resElaborate" class="resonance-card__copy">
+                            Enter your birth date for a more personal reading of how this Fire Horse year interacts with your own element.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="site-footer__brand">
+                <a href="https://arcanastudiolabs.com/" target="_blank" rel="noopener noreferrer" class="brand-link">
+                    <img id="arcanaLogo" src="logo.png" alt="Arcana Studio Labs logo" loading="lazy" decoding="async" width="64" height="64">
+                    <div>
+                        <span class="brand-link__title">Arcana Studio Labs</span>
+                        <span class="brand-link__meta">Digital ritual engineering</span>
+                    </div>
+                </a>
+                <a href="https://codex-witch.arcanastudiolabs.com/" target="_blank" rel="noopener noreferrer" class="brand-link">
+                    <img id="witchLogo" src="logo2.jpg" alt="Codex of Witch logo" loading="lazy" decoding="async" width="64" height="64">
+                    <div>
+                        <span class="brand-link__title">Codex of Witch</span>
+                        <span class="brand-link__meta">Master archive</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="site-footer__meta">
+                <p>2026 archive for Bing Wu / Fire Horse. Static codex, live tools, and traditional guidance kept in one place.</p>
+                <div class="site-footer__seal">
+                    <span>Feng Shui Guide 2026</span>
+                    <span>Keep the bright sectors clean. Keep the heavy ones quiet.</span>
                 </div>
             </div>
-        </div>
-
-        <div id="afflictions" class="tab-content">
-            <div class="aff-grid">
-                <div class="aff-item danger">
-                    <h2>Tai Sui · 5 Yellow <span class="annotation">太岁 · 五黄</span></h2>
-                    <p><strong>Location:</strong> South (157.5° – 202.5°)</p>
-                    <p style="margin-top:1rem;"><strong>Understanding this energy:</strong> In 2026, the Grand Duke resides in the South, accompanied by the 5 Yellow star of calamity. This does not mean "do not enter" — rather, avoid heavy construction, drilling, or sitting with back to South. The energy is dormant but intense; stillness is protective. Salt water absorbs earth toxicity. Replace every lunar month.</p>
-                    <div class="recipe-block"><strong>Traditional Remedy:</strong> White ceramic jar filled with sea salt, 6 old coins, topped with water. Do not cover. Let salt crystallize naturally. Place Pi Xiu facing outward for wealth protection.</div>
-                </div>
-                <div class="aff-item warning">
-                    <h2>Three Killings <span class="annotation">三杀</span></h2>
-                    <p><strong>Location:</strong> North (322.5° – 37.5°)</p>
-                    <p><strong>Understanding this energy:</strong> Three Killings arise from the annual triad. In 2026, North carries risk of loss — wealth, health, relationships. This is not fatalistic; it calls for awareness. Avoid sitting with back to North. The remedy is not a "weapon" but a gesture of respect: celestial guardians placed with intention.</p>
-                    <div class="recipe-block"><strong>Traditional Remedy:</strong> Place Chi Lin, Fu Dog, and Pi Yao in the North sector, facing the main door. Clean water and incense on 1st and 15th lunar days. Do not place in bedroom.</div>
-                </div>
-            </div>
-        </div>
-
-        <div id="zodiac" class="tab-content">
-            <div class="zodiac-header">
-                <h2>12 Zodiacs · 2026 Fire Horse <span class="annotation">生肖年运</span></h2>
-                <div class="zodiac-calc">
-                    <label>Birth year:</label>
-                    <input type="number" id="yearInput" min="1900" max="2031" value="1986" placeholder="eg. 1986">
-                    <button onclick="showZodiacFromYear()">Find sign</button>
-                    <span id="zodiacResult" style="font-weight:700;">—</span>
-                </div>
-            </div>
-            <div class="zodiac-grid" id="z-grid"></div>
-        </div>
-
-        <div id="resonance" class="tab-content">
-            <div class="res-box">
-                <h2>Day Master Resonance · 日主</h2>
-                <p style="margin:1rem auto 2rem; font-size:1.1rem;">Your Day Master is the heavenly stem of your birth day — the ruler of your Bazi chart. Enter your date below for accurate 60-cycle calculation.</p>
-                <div class="res-input-container">
-                    <input type="date" id="birthDate" placeholder="Your birth date">
-                    <button class="calc-btn" onclick="calcRes()">🔮 Calculate Day Master</button>
-                </div>
-                <div id="res-result" style="margin-top:1.5rem; font-size:1.8rem; font-weight:600;"></div>
-                <div id="resStemBranch" style="margin-top:0.5rem; font-size:1.2rem; color:var(--hero-sub);"></div>
-                <div id="resElaborate" style="margin-top:1.5rem; font-size:1.1rem; max-width:700px; margin-left:auto; margin-right:auto; color:var(--hero-sub);"></div>
-                <div id="resElementIconContainer" style="display: none;" class="result-element-icon"><i id="resElementIcon" class="fas fa-leaf"></i><span id="resElementName"></span></div>
-            </div>
-        </div>
-
-        <footer class="footer">
-            <div style="display: flex; align-items: center; gap: 12px;"><i class="fas fa-scroll" style="font-size: 1.8rem;"></i><span style="font-weight: 700;">Codex·Witch</span></div>
-            <div style="display: flex; gap: 2rem;"><span>© 2026 Bing Wu</span><span><i class="fas fa-seal"></i> Master Archive</span><span>witch.codex</span></div>
         </footer>
-    </div>
-
-    <!-- Floating action buttons -->
-    <div class="floating-actions">
-        <a href="https://discord.com/users/909063517280296961" target="_blank" rel="noopener noreferrer" class="float-btn discord" title="Chat on Discord">
-            <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://ko-fi.com/eunicecheng" target="_blank" rel="noopener noreferrer" class="float-btn kofi" title="Support on Ko-fi">
-            <i class="fas fa-mug-hot"></i>
-        </a>
     </div>
 
     <script src="script.js"></script>
